@@ -1,4 +1,4 @@
-package me.seominjae.springbootdeveloper;
+package springbootdeveloper;
 
 /*
     MemberRepositoryTest 를 만들었지만, 데이터 조회를 위해서
@@ -9,6 +9,8 @@ package me.seominjae.springbootdeveloper;
     이제 MemberRepositoryTest.java 파일 코드 작성
  */
 
+import me.seominjae.springbootdeveloper.Member;
+import me.seominjae.springbootdeveloper.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
