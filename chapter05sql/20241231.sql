@@ -35,7 +35,7 @@ select
 -- 2. FROM : ~로 부터 + 테이블명
 -- FROM은 데이터가 저장된 위치를 나타냄.
 select *
-	from users;
+	from users; 
 -- users.csv 파일에 있었던 모든 테이블과 컬럼과 값이 출력이 됐음을 확인 가능
 -- * : asterisk = all : 와일드카드라는 표시 // java
 -- select * from users; users 테이블에 있는 모든 컬럼의 값을 조회하라
@@ -72,6 +72,7 @@ SELECT * FROM ORDERDETAILS;
 SELECT * FROM USERS limit 7;
 -- orders에서 id, user_id, order_date 컬럼의 데이터를 모두 표시하세요.
 SELECT id, user_id, order_date from ORDERS;
+
 
 
 
