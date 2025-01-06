@@ -87,11 +87,97 @@ SELECT STAFF_ID , USER_ID , count(*)
 
 -- 3. orders에서 월별로 주문한 회원 수 출력할 것(order_date 컬럼 이용, 최신순으로 정렬)
 
+-- 1번 쿼리
+
 SELECT SUBSTR(ORDER_DATE,1,7) , COUNT(distinct USER_ID) 
 	FROM orders
 	group by SUBSTR(ORDER_DATE,1,7) 
 	order by SUBSTR(ORDER_DATE,1,7) DESC 
 	;
+
+-- 2번 쿼리
+
+SELECT SUBSTR(ORDER_DATE,1,7) as month, COUNT(distinct USER_ID) as uniqueUser
+	FROM orders
+	group by SUBSTR(ORDER_DATE,1,7) 
+	order by SUBSTR(ORDER_DATE,1,7) DESC 
+	;
+
+-- 마리아DB에서만 가능한 비표준 쿼리이므로 SQLD / P에서는 이렇게 출제되지않음 DB간 호환성을 염두에 두고있으면 1번으로 작성하는게 안전
+
+-- users와 orders를 하나로 결합하여 출력합니다.(단 주문 정보가 있는 회원의 정보만 출력)
+
+select *
+	FROM users u inner join orders o on u.ID = o.USER_ID 
+	;
+
+
+-- 이상의 SQL문에 대한 해석
+-- 기존에 from 다음에는 테이블 명 하나만 작성되었지만, 이제는 JOIN연산을 위한
+-- 추가 문법이 적용됐음.
+-- 회원 정보와 주문 정보를 하나로 결합하기 위해 users와 orders를 INNER JOIN(추후설명)으로
+-- 묶고, '후속조건'으로 "주문정보가 있는 회원의 정보만 출력하기 위해" u.id=o.user_id를 적용함.
+
+-- users PK인 id는 회원id에 해당합니다.
+-- orders에 PK인 id는 주문 id에 해당하고, 2번째 컬럼인 user_id는 
+-- orders에서는 PK는 아니지만 JOIN을 수행할 때 users와 합치는 조건이 됩니다.
+
+-- 여러 테이블을 하나의 FROM에서 다룰 때에는 별칭을 사용 가능(ALIAS와는 다릅니다 -> AS는 컬럼명을 지정).
+-- FROM users u 로 작성했을 때 이후에는 u 만 썻을 경우 users 테이블을 의미하게 됨.
+-- 그래서 이후에 FROM 절에서 다수의 테이블 명을 기입하게 될 경우에 별칭을 통해서 정리하여
+-- SQL문을 효율적으로 사용할 수 있게 됨
+
+-- 이상의 문제에서의 조건은 '주문 정보가 있는 회원의 정보만 출력' 하는 것이므로, orders 내에
+-- user_id가 일부 기준이 되어야 합니다.
+
+-- 왜냐하면 users내에 있는 id는 1부터 끝까지 있으니까요.
+-- users 테이블에는 회원 id가 id 컬럼에 기륵돼있고, orders 테이블에는 회원 id가 user_id로
+-- 공통된 부분을 지정하는 컬럼이 존재하므로 둘을 연결시킬 수 있는데, 이때 사용하는 전치사가 "ON"
+
+-- JOIN 적용 후 결과를 보기 좋게 정렬하도록 SQL 문 수정
+-- 회원 id를 기준으로 오름차순하는 조건.
+-- ORDER BY에서도 테이블 별칭으로 정렬할 컬럼을 지정 가능.
+
+select *
+	FROM users u inner join orders o on u.ID = o.USER_ID
+	ORDER BY u.ID
+	;
+
+-- FROM에서 JOIN이 정렬된 후에 단일 테이블에 명령을 내리는 것처럼 쿼리를 작성 가능
+-- -> 이미 JOIN을 통해 하나의 테이블로 구성된 것 처럼 간주되기 때문.
+
+-- 복수의 테이블이 하나로 결합되기 위해서는 두 테이블 간에 공통된 부분이 존재해야 합니다.
+-- RDBS에서는 이 부분을 키(Key)라고 합니다.
+-- 키 값은 테이블에 반드시 1개 이상 존재하도록 설게되어 있고(여러분이 설계 해야 하고)
+-- 테이블에서 개별 행을 유일하게 구분 짓습니다. 따라서 키 값은 컬럼 내에서 중복되지 않으며
+-- 개별 행을 구분해야 하므로 null 값을 가질 수 없습니다(nullable = false로 Entity 클래스에서 지정했습니다.)
+
+-- cf) 키 값은 테이블 내에서 고유한 값을 가지므로 한 테이블에서 개수를 계산할 때 중복되진 않는다.
+-- 하지만 여러테이블을 조인하면 '키 값도 중복될 수 있다.' 예를 들어 회원 아이디가 7인 사람이
+-- 세번 주문했다면 회원정보(users)와 주문정보(orders)를 결합한 결과에는 u.id = 7인
+-- 행에 3 개 있을 것이다. 이 경우 '한 번이라도 주문한 회원 수'를 중복 없이 구하려면 회원
+-- id를 중복 제거한 뒤에 회원 수를 count 할 필요가 있다.
+
+-- key의 구분
+-- 1. 기본 키(Primary Key) : 하나의 테이블에서 가지는 고유한 값
+-- 2. 외래 키(Foreign Key) : 다른 테이블에서 가지는 기존 테이블의 값
+
+-- FK는 다른 테이블의 고유한 키 값인 PK를 참조한다.(orders에서 o.id가 FK에 해당,
+-- users의 u.id가 PK에 해당해서 FK가 PK를 참조해서 조건을 합치시켜 JOIN함.)
+
+-- 예를 들어서 PK값이 A, B, C만 있다면 PK 값도 이 값만 가질 수 있고, 또한 중복되지 않는다는 특징을 지니고 있음.
+-- 하지만 FK의 경우에는 참조하고 있는 관계에 따라 참조 대상인 PK 값이 여러번 나타날 수 있습니다.
+-- users 테이블에서는 id = 7인 값이 하나만 존재하지만
+-- orders 테이블에서는 user_id가 PK가 아니기 때문에 3건 존재합니다
+-- 이를 join 시켰을 때 u.id로 order by하더라도 합친 테이블 상에서 제 1 컬럼(즉 PK 컬럼)에
+-- 동일 id가 여러 번 출력될 수 있습니다.
+
+-- JOIN의 종류
+-- 1. INNER JOIN
+-- 	: 두 테이블의 키 값이 일치하는 행의 정보만 가지고 옵니다.
+-- 
+-- 
+
 
 -- HAVING
 -- group by를 이용해서 데이터를 그룹화하고, 해당 그룹별로 집계 연산을 수행하여,
@@ -219,16 +305,3 @@ SELECT COUNTRY , COUNT(distinct ID)
 -- 	GROUP BY 음식분류
 -- 	ORDER BY 주문건수 DESC 
 -- 	;
-
-
-
-
-
-
-
-
-
-
-
-
-
