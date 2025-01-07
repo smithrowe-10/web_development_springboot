@@ -229,3 +229,8 @@ SELECT o.user_id
 
 -- 강사 정리 : 실무에서는 INNER JOIN(default), LEFT OUTER JOIN을 기본으로 사용함.
 -- 			OUTER을 명시하는 회사도 있음.
+
+
+
+
+
