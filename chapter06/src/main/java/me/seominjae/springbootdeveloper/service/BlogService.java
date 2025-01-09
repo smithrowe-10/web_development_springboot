@@ -6,6 +6,8 @@ import me.seominjae.springbootdeveloper.dto.AddArticleRequest;
 import me.seominjae.springbootdeveloper.repository.BlogRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor        // final 이 붙거나 @NotNull이 붙은 필드의 생성자 추가
 @Service                        // 빈으로 등록
 
@@ -41,4 +43,27 @@ public class BlogService {
             지시 사항
             service와 동일한 라인에 controller 패키지 생성한 뒤에, BlogApiController.java 생성
      */
+
+    public List<Article> findAll(){
+        return blogRepository.findAll();
+
+    }
+    /*
+        JPA 지원 메서드인 findAll()을 호출해 article 테이블에 저장돼 있는 모든 데이터를 조회 -> Test에서 이미 해봤습니다.
+
+        응답을 위한 DTO 생성 -> dto package에 -> ArticleResponse.java 파일 생성
+     */
+
+    // id로 특정 글 조회
+    public Article findById(long id){ //  이 경우 결과값은 하나밖에 없기 때문에 리턴 타입이 Article 이어야만 합니다. -> id 가 PK라서
+        return blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found:" + id));    // 람다식
+    }
+    // BlogApiController.java
+
+    // 삭제 메서드
+    public void delete(long id){
+        blogRepository.deleteById(id);
+    }
+    //컨트롤러로 가면 됩니다
 }
