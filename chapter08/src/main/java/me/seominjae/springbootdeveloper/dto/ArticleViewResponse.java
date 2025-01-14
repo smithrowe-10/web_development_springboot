@@ -21,5 +21,5 @@ public class ArticleViewResponse {
         this.content = article.getContent();
         this.createdAt = article.getCreatedAt();
     }
-    //BlogViewController 로 넘어가기
+
 }

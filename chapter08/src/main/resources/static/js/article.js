@@ -14,7 +14,7 @@ if (deleteButton) {
     });
 }
 // 수정기능
-// 1.id가 modify-btn 엘리먼트 조회
+
 const modifyButton = document.getElementById('modify-btn')
 if (modifyButton) {
     modifyButton.addEventListener('click',event => {
@@ -39,11 +39,11 @@ if (modifyButton) {
     });
 }
 // 등록 기능
-// id가 create-btn 인 엘리먼트
+
 const createButton = document.getElementById("create-btn");
 
 if (createButton){
-    // 2. 클릭 이벤트가 감지되면 생성API 요청
+
     createButton.addEventListener("click", (event) =>{
         fetch("api/articles",{
             method: "POST",
