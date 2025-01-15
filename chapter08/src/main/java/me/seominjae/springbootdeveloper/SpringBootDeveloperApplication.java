@@ -63,5 +63,5 @@ public class SpringBootDeveloperApplication {
             회원 엔티티와 연결되어 데이터를 조회하게 해줄 리포지토리가 추가됨
             스프링 시큐리티에서 사용자 정보를 가져오는 서비스를 구현
 
-            -> build.gradle 에서 의존선 추가 ㄱㄱ
+            -> build.gradle 에서 의존성 추가 ㄱㄱ
  */
