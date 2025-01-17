@@ -1,4 +1,4 @@
-package me.ahngeunsu.springbootdeveloper.config.jwt;
+package springbootdeveloper.config.jwt;
 
 
 import io.jsonwebtoken.Header;
@@ -6,6 +6,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Builder;
 import lombok.Getter;
+import me.ahngeunsu.springbootdeveloper.config.jwt.JwtProperties;
 
 import java.time.Duration;
 import java.util.Date;
@@ -34,7 +35,6 @@ public class JwtFactory {
         return JwtFactory.builder().build();
     }
 
-    //jjwt 라이브러리를 사용해 JWT 생성
     public String createToken(JwtProperties jwtProperties) {
         return Jwts.builder()
                 .setSubject(subject)
@@ -48,11 +48,5 @@ public class JwtFactory {
 
 
     }
-        /*
-        빌더 패턴을 사용해 객체를 만들 때 테스트가 필요한 데이터만 선택. 빌더 패턴을 사용하지 않으면
-        필드 기본값을 사용
 
-        05 단계 - 이제 TokenProvider 클래스를 테스트하는 테스트 클래스를 만들고.
-            JwtFactory를 만든 디렉토리와 동일한 위치에 TokenProviderTest.java파일을 만드세요
-        */
 }

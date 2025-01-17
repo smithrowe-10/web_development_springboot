@@ -5,21 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42e2f80-1959-4515-81bd-03ea9b802fdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/config/tokenAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/controller/TokenApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/domain/RefreshToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/domain/RefreshTokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/dto/CreateAccessTokenRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/dto/CreateAccessTokenResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/repository/RefreshTokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/me/ahngeunsu/springbootdeveloper/config/jwt/TokenProviderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/me/ahngeunsu/springbootdeveloper/controller/TokenApiControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/config/jwt/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/config/jwt/TokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/ahngeunsu/springbootdeveloper/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/QuizController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/SpringBootDeveloperApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/TestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/config/jwt/JwtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/config/jwt/TokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/config/tokenAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/controller/BlogApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/controller/BlogViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/controller/ExampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/controller/TokenApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/controller/UserApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/controller/UserViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/domain/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/domain/RefreshToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/domain/RefreshTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/AddArticleRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/AddUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/ArticleListViewResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/ArticleResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/ArticleViewResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/CreateAccessTokenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/CreateAccessTokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/dto/UpdateArticleRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/repository/BlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/repository/RefreshTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/service/TokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/service/UserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/java/me/ahngeunsu/springbootdeveloper/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/static/js/article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/templates/article.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/templates/articleList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/templates/example.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/templates/newArticle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/main/resources/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/test/java/springbootdeveloper/config/jwt/JwtFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/test/java/springbootdeveloper/config/jwt/TokenProviderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter10/src/test/java/springbootdeveloper/controller/TokenApiControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/ahngeunsu/springbootdeveloper/config/jwt/JwtFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/ahngeunsu/springbootdeveloper/config/jwt/JwtFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/ahngeunsu/springbootdeveloper/controller/TokenApiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/ahngeunsu/springbootdeveloper/controller/TokenApiControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +107,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.TokenApiControllerTest.createNewAccessToken.executor": "Run",
     "Gradle.TokenProviderTest.executor": "Run",
     "Gradle.TokenProviderTest.generateToken.executor": "Run",
     "Gradle.TokenProviderTest.getAuthentication.executor": "Run",
@@ -99,8 +136,8 @@
       <recent name="me.ahngeunsu.springbootdeveloper.config.jwt" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TokenProviderTest.getUserId">
-    <configuration name="TokenProviderTest.generateToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager">
+    <configuration name="TokenApiControllerTest.createNewAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -113,7 +150,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.ahngeunsu.springbootdeveloper.config.jwt.TokenProviderTest.generateToken&quot;" />
+            <option value="&quot;me.ahngeunsu.springbootdeveloper.controller.TokenApiControllerTest.createNewAccessToken&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -222,11 +259,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TokenApiControllerTest.createNewAccessToken" />
         <item itemvalue="Gradle.TokenProviderTest.getUserId" />
         <item itemvalue="Gradle.TokenProviderTest.getAuthentication" />
         <item itemvalue="Gradle.TokenProviderTest.validToken_invalidToken" />
         <item itemvalue="Gradle.TokenProviderTest.validToken_validToken" />
-        <item itemvalue="Gradle.TokenProviderTest.generateToken" />
       </list>
     </recent_temporary>
   </component>
